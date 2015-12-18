@@ -1,0 +1,17 @@
+http://forum.oberonplace.com/blog.php?b=39016
+
+Introduction
+
+CorelDRAW X7 released today, and with this new version comes several changes. I hopefully will be posting several articles in the next several days that discuss many of these changes. If you have questions or problems immediately feel free to contact me and hopefully we can work through them.
+
+VBA Object Model Change
+
+In this post I want to quickly discuss the big VBA Object Model change. The biggest change to the VBA Object model is that the CorelDRAW.tlb has been depreciated and now you are working only in VGCore.tlb for CorelDRAW X7.
+
+This means that if you create a GMS file in CorelDRAW X7 it will not work with previous versions of CorelDRAW. If you wish to support multiple versions of CorelDRAW you need to create the GMS file in that older version. So for example if I know I want to support CorelDRAW X6 and X7 with my GMS file I would need to create the GMS file in CorelDRAW X6 and it would then work in X6 and in X7.
+
+If you create the GMS file in X7 and then put it into X6 the GMS will not show up. Why? In order for X6 to successfully load a GMS file it looks for the CorelDRAW.tlb reference, since this reference does not exist in the GMS file created by X7, CorelDRAW X6 does not see this as a valid GMS file and therefor does not load it.
+
+Conclusion
+
+In summary, GMS files created in X7 will not work with previous versions. If you wish to support multiple versions of CorelDRAW with your GMS file create the GMS file in the older version.
